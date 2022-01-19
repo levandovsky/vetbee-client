@@ -1,7 +1,10 @@
+import {useContext} from "react";
 import {useNavigate} from "react-router-dom";
+import {ThemeContext} from "../context/theme";
 
 export const Pet = ({pet, onDelete}) => {
     const navigate = useNavigate();
+    const {setTheme} = useContext(ThemeContext);
     const showLogs = () => {
         navigate(`/health-records/${pet.id}`);
     };
@@ -16,6 +19,9 @@ export const Pet = ({pet, onDelete}) => {
             </div>
             <div>
                 <button onClick={showLogs}>Show logs</button>
+            </div>
+            <div>
+                <button onClick={() => setTheme("dark")}>Set theme to dark</button>
             </div>
         </div>
     );

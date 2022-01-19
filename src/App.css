@@ -1,24 +1,36 @@
-main {
-  width: 80%;
-  margin: auto;
-}
-
 nav {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 }
 
 nav a:first-child {
-  margin-right: 1rem;
+    margin-right: 1rem;
 }
 
 .list header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .list .pet:not(:last-child) {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+main {
+    color: var(--text-primary);
+    background-color: var(--background);
+    height: calc(100vh - 40px);
+    font-size: large;
+    font-weight: bold;
+    transition: all 0.5s;
+    padding: 1rem;
+}
+
+button {
+    color: var(--text-primary);
+    background-color: var(--background);
+    border: 2px var(--text-primary) solid;
+    float: right;
+    transition: all 0.5s;
 }
