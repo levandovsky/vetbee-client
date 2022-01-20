@@ -9,11 +9,11 @@ export const AddLog = () => {
         try {
             const data = new FormData(e.target);
             const [description, status] = data.values();
-            const res = await RecordsApi.add({pet_id: id, description, status});
+            const res = await RecordsApi.addLog({pet_id: id, description, status});
 
             if (res.err) throw new Error(res.err);
 
-            navigate(`/logs/${id}`);
+            navigate(`/health-records/${id}`);
         } catch (error) {
             console.error(error);
         }

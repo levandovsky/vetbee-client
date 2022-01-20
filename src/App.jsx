@@ -8,6 +8,8 @@ import {HealthRecords} from "./pages/HealthRecords";
 import {AddLog} from "./pages/AddLog";
 import {useState} from "react";
 import {ThemeContext} from "./context/theme";
+import {NotFound} from "./pages/NotFound";
+import {AddPrescription} from "./pages/AddPrescription";
 
 function App() {
     const [theme, setTheme] = useState("light");
@@ -41,8 +43,10 @@ function App() {
                         <Route path="/add-medication" element={<AddMedication />} />
                         <Route path="/health-records/:id" element={<HealthRecords />} />
                         <Route path="/add-log/:id" element={<AddLog />} />
+                        <Route path="/add-prescription/:id" element={<AddPrescription />} />
+                        <Route path="/404" element={<NotFound />} />
 
-                        <Route path="*" element={<Navigate to="/pets" />} />
+                        <Route path="*" element={<Navigate to="/404" />} />
                     </Routes>
                 </Router>
             </main>
