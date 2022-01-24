@@ -4,6 +4,7 @@ import {Pet} from "./Pet";
 
 jest.mock("react-router-dom", () => {
     const actualNav = jest.requireActual("react-router-dom");
+
     return {
         ...actualNav,
         useNavigate: jest.fn(),
