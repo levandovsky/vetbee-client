@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {Pet} from "../components/Pet";
 import {PetsApi} from "../services/pets-api";
 
-export const Pets = () => {
+const Pets = () => {
     const [pets, setPets] = useState(null);
     const navigate = useNavigate();
 
@@ -46,3 +46,5 @@ export const Pets = () => {
         </div>
     );
 };
+
+export default Pets;
