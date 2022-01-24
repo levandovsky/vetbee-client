@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/v1/meds"
+const API_URL = `${process.env.REACT_APP_BASE_URL}/v1/meds`
 
 export class MedsApi {
     static async getAll() {
