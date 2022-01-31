@@ -2,7 +2,6 @@ import "./App.css";
 
 import {lazy, Suspense, useState} from "react";
 import {BrowserRouter as Router, Route, Routes, Navigate, Link} from "react-router-dom";
-import {Medications} from "./pages/Medications";
 import {AddPet} from "./pages/AddPet";
 import {AddMedication} from "./pages/AddMedication";
 import {HealthRecords} from "./pages/HealthRecords";
@@ -12,6 +11,7 @@ import {NotFound} from "./pages/NotFound";
 import {AddPrescription} from "./pages/AddPrescription";
 
 const Pets = lazy(() => import("./pages/Pets"));
+const Medications = lazy(() => import("./pages/Medications"));
 
 function App() {
     const [theme, setTheme] = useState("light");
@@ -39,12 +39,22 @@ function App() {
                     </nav>
 
                     <Routes>
-                        <Route path="/pets" element={
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <Pets />
-                            </Suspense>
-                        } />
-                        <Route path="/medications" element={<Medications />} />
+                        <Route
+                            path="/pets"
+                            element={
+                                <Suspense fallback={<div>Loading...</div>}>
+                                    <Pets />
+                                </Suspense>
+                            }
+                        />
+                        <Route
+                            path="/medications"
+                            element={
+                                <Suspense fallback={<div>Loading...</div>}>
+                                    <Medications />
+                                </Suspense>
+                            }
+                        />
                         <Route path="/add-pet" element={<AddPet />} />
                         <Route path="/add-medication" element={<AddMedication />} />
                         <Route path="/health-records/:id" element={<HealthRecords />} />
