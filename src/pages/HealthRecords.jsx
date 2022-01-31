@@ -35,7 +35,7 @@ const recordReducer = (state, action) => {
     }
 };
 
-export const HealthRecords = () => {
+const HealthRecords = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const [state, dispatch] = useReducer(recordReducer, {
@@ -102,3 +102,5 @@ export const HealthRecords = () => {
 
     return records === null ? <div>Loading...</div> : renderPage;
 };
+
+export default HealthRecords;
