@@ -2,7 +2,7 @@ import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {MedsApi} from "../services/meds-api";
 
-export const Medications = () => {
+const Medications = () => {
     const [meds, setMeds] = useState(null);
     const navigate = useNavigate();
 
@@ -42,3 +42,5 @@ export const Medications = () => {
         </div>
     );
 };
+
+export default Medications;
